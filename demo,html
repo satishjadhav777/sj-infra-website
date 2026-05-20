@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soling Stone Work - SJ Infra Developers</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f7fa;
+    }
+
+    header {
+      background: #fdbe33;
+      color: white;
+      padding: 15px 30px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h1, h2 {
+      color: #fdbe33;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    h3 {
+      color: #333;
+      margin-top: 30px;
+    }
+
+    ul {
+      padding-left: 20px;
+      color: #333;
+    }
+
+    .images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .images img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .images img:hover {
+      transform: scale(1.03);
+    }
+
+    a.back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: #fdbe33;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    a.back-btn:hover {
+      background: #e0a800;
+    }
+
+    /* Popup Modal Styles */
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .popup span {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h2>SJ Infra Developers</h2>
+  </header>
+
+  <div class="container">
+    <h1>Soling Stone Work</h1>
+    <p>
+      🪨 <strong>Soling Stone Work:</strong><br>
+      Soling stone is the process of laying hard, durable stones closely packed over the ground surface to create a solid base. It is commonly used in road foundations, flooring of industrial areas, and below concrete slabs to improve stability and drainage. SJ Infra Developers ensures proper compaction and alignment for long-lasting results.
+    </p>
+
+    <h3>Applications:</h3>
+    <ul>
+      <li>Base for roads and pavements</li>
+      <li>Under foundations and flooring</li>
+      <li>Parking areas and industrial sheds</li>
+      <li>Drainage improvement layers</li>
+    </ul>
+
+    <h3>Benefits:</h3>
+    <ul>
+      <li>Strong and stable foundation base</li>
+      <li>Improves drainage and reduces waterlogging</li>
+      <li>Prevents settling and cracks in concrete</li>
+      <li>Cost-effective and durable</li>
+    </ul>
+
+    <div class="images">
+      <img src="img/sol1.jpg" alt="Soling Stone Base Layer">
+      <img src="img/sol2.jpg" alt="Soling Stone Compacting">
+      <img src="img/sol3.jpg" alt="Soling Work for Foundation">
+      <img src="img/sol4.jpg" alt="Stone Soling Before Concreting">
+      <img src="img/sol5.jpg" alt="Industrial Soling Work">
+      <img src="img/sol6.jpg" alt="Completed Soling Stone Layer">
+    </div>
+
+    <a href="service.html" class="back-btn">⬅ Back to Services</a>
+  </div>
+
+  <!-- Popup Modal -->
+  <div class="popup" id="popup">
+    <span id="closeBtn">&times;</span>
+    <img id="popupImg" src="" alt="Enlarged Image">
+  </div>
+
+  <script>
+    const images = document.querySelectorAll('.images img');
+    const popup = document.getElementById('popup');
+    const popupImg = document.getElementById('popupImg');
+    const closeBtn = document.getElementById('closeBtn');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        popup.style.display = 'flex';
+        popupImg.src = img.src;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      popup.style.display = 'none';
+    });
+
+    popup.addEventListener('click', (e) => {
+      if (e.target !== popupImg) {
+        popup.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
